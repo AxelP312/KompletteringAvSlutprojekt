@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FightingGame
 {
@@ -6,23 +7,25 @@ namespace FightingGame
     {
         static void Main(string[] args)
         {
-            // //Skriver ut weakenemys attack
-            // WeakEnemy weakEnemy = new WeakEnemy();
-            // Console.WriteLine(weakEnemy.Attack());
-            
-            // //Skriver ut Strongenemy attack
-            // StrongEnemy strongEnemy = new StrongEnemy();
-            // Console.WriteLine(strongEnemy.Attack());
-
-            // //Testar om name fungerar
-            // Enemy enemy = new Enemy();
-            // Console.WriteLine(enemy.Name);
-
-            // Player player = new Player();
-            // //attacker fungerar
-            // Console.WriteLine(player.Attack());
-
+            //skapar arena
             Arena arena = new Arena();
+
+            //Skapar spelare
+            Player player = new Player();
+
+            //Skapar lista med motståndare
+            List<Enemy> enemyList = new List<Enemy>();
+
+            //lägger till motståndare till listan, 5x motståndare
+            for (int z = 0; z < 5; z++)
+            {
+                enemyList.Add(arena.EnemyType());
+                Console.WriteLine("Motståndare har hp: " + enemyList[z].Hitpoints);
+            }
+
+            Console.WriteLine("Startar arenan!");
+            
+            arena.ArenaFight(player, enemyList, 0);
 
 
 

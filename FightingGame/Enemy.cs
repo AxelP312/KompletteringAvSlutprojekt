@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace FightingGame
 {
@@ -16,7 +17,7 @@ namespace FightingGame
             {
                 return name;
             }
-        }
+        }        
         
         protected string RandomizeName()
         {
@@ -28,5 +29,7 @@ namespace FightingGame
 
             return name;
         }
+
+
     }
 }

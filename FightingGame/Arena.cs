@@ -6,43 +6,35 @@ namespace FightingGame
     public class Arena
     {
 
-        //För mycket metoder kopplade till instansen, lös det.
-
-        public Arena()
-        {
-            //Skapar spelare
-            Player player = new Player();
-            
-            //Skapar lista med motståndare
-            List<Enemy> enemyList = new List<Enemy>();
-
-            //lägger till motståndare till listan, 5x motståndare
-            for (int z = 0; z < 5; z++)
-            {
-                enemyList.Add(EnemyType());
-            }
-
-        }
-
         public void ArenaFight(Player player, List<Enemy> enemyList, int enemyNumber)
         {
             bool FightActive = true;
-            while (FightActive && enemyNumber < 5)
+            while (FightActive == true && enemyNumber < 5)
             {
-                Console.WriteLine("Enemy hp: " + enemyList[enemyNumber].Hitpoints);
-                enemyList[enemyNumber].Hitpoints -= player.Attack();
+                //spelare attackerar
+                Console.WriteLine(enemyList[enemyNumber].Name + " har " + enemyList[enemyNumber].Hitpoints + " hp!");
 
-                Console.WriteLine("player hp: " + player.Hitpoints);
-                player.Hitpoints -= enemyList[enemyNumber].Attack();
+                enemyList[enemyNumber].Hurt(player.Attack());
 
-                //Rensar konsolen
-                Console.Clear();
+                Console.WriteLine(enemyList[enemyNumber].Name + " har nu" + enemyList[enemyNumber].Hitpoints + " hp!");
+
+                //Spelare blir attackerad
+                Console.WriteLine(player + " har " + player.Hitpoints + " hp!");
+
+                player.Hurt(enemyList[enemyNumber].Attack());
+
+                Console.WriteLine(player + " har nu " + player.Hitpoints + " hp!");
+
+                Console.ReadLine();
+                // //Rensar konsolen
+                // Console.Clear();
 
             }
         }
 
+        
 
-        private Enemy EnemyType()
+        public Enemy EnemyType()
         {
 
             Random generator = new Random();
@@ -61,7 +53,5 @@ namespace FightingGame
                 return new WeakEnemy();
             }
         }
-
-
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace FightingGame
 {
@@ -24,6 +25,11 @@ namespace FightingGame
             {
                 hp -= Math.Max(value, 0);
             }
+        }
+
+        public void Hurt(int amount)
+        {
+            hp -= amount;
         }
     }
 }
