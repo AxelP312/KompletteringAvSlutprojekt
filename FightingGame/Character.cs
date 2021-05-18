@@ -2,15 +2,17 @@ using System;
 
 namespace FightingGame
 {
-    public class Character
+    public class Character : Arena
     {
-        int hp;
-        int damage;
+        protected int hp = 50;
+        protected int damage = 0;
+        protected string name = "";
 
-        public int Attack()
+        public virtual int Attack()
         {
             return damage;
         }
+
 
         public int Hitpoints
         {
