@@ -16,15 +16,25 @@ namespace FightingGame
             //Skapar lista med motståndare
             List<Enemy> enemyList = new List<Enemy>();
 
+            //Skapar bigPotion
+            BigPotion bigPotion = new BigPotion();
+            
+            //Skapar SmallPotion
+            SmallPotion smallPotion = new SmallPotion();
+
+            player.Hitpoints += smallPotion.HpBoost();
+            player.Hitpoints += bigPotion.HpBoost();
+
+
             //lägger till motståndare till listan, 5x motståndare, Lägg till i en arena metod istället?
             for (int z = 0; z < 5; z++)
             {
                 enemyList.Add(arena.EnemyType());
-                Console.WriteLine("Motståndare har hp: " + enemyList[z].Hitpoints);
             }
 
             Console.WriteLine("Startar arenan!");
             arena.ArenaFight(player, enemyList, 0);
+            
 
 
 

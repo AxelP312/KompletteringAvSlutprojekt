@@ -23,10 +23,15 @@ namespace FightingGame
             {
                 return hp;
             }
-            set // hitpoints = Skadan från attack sänker hp
+            set //Ändra hitpoints
             {
-                hp -= Math.Max(value, 0);
+                hp +=(value-hp);
             }
+        }
+
+        public void Heal(int amount)
+        {
+            hp += amount;
         }
 
         public void Hurt(int amount)
