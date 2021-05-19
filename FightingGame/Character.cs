@@ -8,11 +8,13 @@ namespace FightingGame
         protected int hp = 50;
         protected int damage = 0;
         protected string name = "";
+        protected bool alive = true;
 
         public virtual int Attack()
         {
             return damage;
         }
+        
 
 
         public int Hitpoints

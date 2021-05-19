@@ -29,6 +29,12 @@ namespace FightingGame
                 // //Rensar konsolen
                 // Console.Clear();
 
+                if(enemyList[enemyNumber].Hitpoints < 0)
+                {
+                    enemyNumber++;
+                }
+
+                Console.WriteLine("enemynumber = " + enemyNumber);
             }
         }
 

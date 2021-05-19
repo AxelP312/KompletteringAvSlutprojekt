@@ -16,7 +16,7 @@ namespace FightingGame
             //Skapar lista med motståndare
             List<Enemy> enemyList = new List<Enemy>();
 
-            //lägger till motståndare till listan, 5x motståndare
+            //lägger till motståndare till listan, 5x motståndare, Lägg till i en arena metod istället?
             for (int z = 0; z < 5; z++)
             {
                 enemyList.Add(arena.EnemyType());
@@ -24,7 +24,6 @@ namespace FightingGame
             }
 
             Console.WriteLine("Startar arenan!");
-            
             arena.ArenaFight(player, enemyList, 0);
 
 

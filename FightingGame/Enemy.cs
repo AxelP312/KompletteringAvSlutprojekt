@@ -17,8 +17,8 @@ namespace FightingGame
             {
                 return name;
             }
-        }        
-        
+        }
+
         protected string RandomizeName()
         {
             Random generator = new Random();
