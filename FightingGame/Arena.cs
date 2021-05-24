@@ -11,30 +11,27 @@ namespace FightingGame
             bool FightActive = true;
             while (FightActive == true && enemyNumber < 5)
             {
+                //stats
+                Console.WriteLine("Player hp: " + player.Hitpoints);
+                Console.WriteLine(enemyList[enemyNumber].Name + " hitpoints: " + enemyList[enemyNumber].Hitpoints);
+
                 //spelare attackerar
-                Console.WriteLine(enemyList[enemyNumber].Name + " har " + enemyList[enemyNumber].Hitpoints + " hp!");
 
                 enemyList[enemyNumber].Hurt(player.Attack());
 
-                Console.WriteLine(enemyList[enemyNumber].Name + " har nu" + enemyList[enemyNumber].Hitpoints + " hp!");
 
                 //Spelare blir attackerad
-                Console.WriteLine(player + " har " + player.Hitpoints + " hp!");
 
                 player.Hurt(enemyList[enemyNumber].Attack());
 
-                Console.WriteLine(player + " har nu " + player.Hitpoints + " hp!");
-
+                Console.WriteLine("Next round! (Press enter)");
                 Console.ReadLine();
-                // //Rensar konsolen
-                // Console.Clear();
+                Console.Clear();
 
                 if(enemyList[enemyNumber].Hitpoints < 0)
                 {
                     enemyNumber++;
                 }
-
-                Console.WriteLine("enemynumber = " + enemyNumber);
             }
         }
 

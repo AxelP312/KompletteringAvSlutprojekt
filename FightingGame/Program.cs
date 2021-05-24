@@ -7,6 +7,8 @@ namespace FightingGame
     {
         static void Main(string[] args)
         {
+            Powerup store = new Powerup();
+            
             //skapar arena
             Arena arena = new Arena();
 
@@ -25,19 +27,16 @@ namespace FightingGame
             player.Hitpoints += smallPotion.HpBoost();
             player.Hitpoints += bigPotion.HpBoost();
 
-
             //lägger till motståndare till listan, 5x motståndare, Lägg till i en arena metod istället?
             for (int z = 0; z < 5; z++)
             {
                 enemyList.Add(arena.EnemyType());
             }
-
-            Console.WriteLine("Startar arenan!");
-            arena.ArenaFight(player, enemyList, 0);
             
+            arena.ArenaFight(player, enemyList, 0);
 
-
-
+            Console.WriteLine("You won!");
+            
             Console.ReadLine();
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FightingGame
 {
-    public class Character : Arena
+    public class Character 
     {
         protected int hp = 50;
         protected int damage = 0;

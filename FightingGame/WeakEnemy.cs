@@ -14,6 +14,8 @@ namespace FightingGame
         public override int Attack()
         {
             //20 dmg
+            
+            Console.WriteLine("Enemy dealt 20 dmg");
             return base.Attack() * 2;
         }
     }

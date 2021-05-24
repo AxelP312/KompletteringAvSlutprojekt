@@ -2,7 +2,7 @@ using System;
 
 namespace FightingGame
 {
-    public class Potion : Store
+    public class Potion : Powerup
     {
         int hpBoost = 0;
         
